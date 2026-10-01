@@ -30,7 +30,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 | | |
 |---|---|
 | **Ferramenta principal** | Airtable, base *Sistema Operacional Pessoal (POS)* com 5 tabelas |
-| **Agenda** | Google Agenda, blocos importados por arquivo `.ics` com lembretes |
+| **Agenda** | Tabela *Agenda* no Airtable + arquivo `.ics` pronto para importar no Google Agenda, com lembretes |
 | **IA** | Claude: planejamento semanal, Matriz de Eisenhower, quebra de tarefas, mensagens e revisão semanal |
 | **Automação** | Airtable: todo domingo às 19h cria o registro da Revisão Semanal |
 | **Técnicas** | GTD, Matriz de Eisenhower (fórmula automática), Pomodoro, time blocking e regra dos 2 minutos |
@@ -44,7 +44,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 
 - **Vídeo Pitch:** _[colar o link do YouTube/Loom/Drive]_
 - **Dashboard (Painel POS):** https://claude.ai/artifact/JZHFT2irWLy7iPYgsBy9dC
-- **Base no Airtable (somente leitura):** _[colar o link de compartilhamento da base]_
+- **Base no Airtable (somente leitura):** https://airtable.com/appcEBvt6c792Oi5F/shrqILXXOTvyHHImJ
 - **Parte teórica:** [docs/parte-teorica.md](docs/parte-teorica.md)
 
 ---
@@ -57,7 +57,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 
 1. toda tarefa é **capturada** no Airtable (GTD) e classificada automaticamente na **Matriz de Eisenhower**;
 2. cada tarefa tem um **próximo passo de 2 minutos**, gerado com ajuda da IA, para facilitar o começo;
-3. a semana é planejada em **blocos de tempo** que aparecem no Google Agenda com lembrete;
+3. a semana é planejada em **blocos de tempo** (tabela *Agenda*), que podem ir para o Google Agenda com lembrete;
 4. o estudo acontece em **Pomodoros**, com meta mínima de 2 por noite;
 5. um **check-in diário** de 1 minuto registra energia, humor, sono e hábitos;
 6. no domingo, a **revisão semanal com o Claude** analisa os dados e ajusta o plano.
@@ -69,7 +69,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 | Ferramenta | Uso | Por que |
 |---|---|---|
 | **Airtable** | Núcleo: tarefas, agenda, check-ins, revisões e prompts | Banco de dados visual com fórmulas, visualizações e automações. Mede hábitos ao longo do tempo, o que o Trello não faz bem |
-| **Google Agenda** | Lembretes dos blocos no celular | Já faz parte do meu dia; importação única via `.ics` |
+| **Google Agenda** | Lembretes dos blocos no celular (opcional) | Já faz parte do meu dia; importação única via `.ics` |
 | **Claude** | IA de apoio ao planejamento e à comunicação | Entende contexto longo e responde em tabelas prontas para o Airtable |
 | **Painel POS** | Visão da semana numa tela | Junta indicadores, matriz, Pomodoro e bem-estar |
 | **Python** | Script `agenda/gerar_ics.py` | Gera a agenda recorrente sem cadastrar evento por evento |
@@ -83,7 +83,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 | **GTD** | Tudo na memória | Status *Caixa de entrada* e tabela *Revisão Semanal* |
 | **Matriz de Eisenhower** | Decidir prioridades | Campos *Urgente* e *Importante* + fórmula *Quadrante* |
 | **Pomodoro** | Cansaço e procrastinação | Estimativas em 🍅, check-in e timer no painel |
-| **Time blocking** | Estudo sem horário | Tabela *Agenda* + Google Agenda |
+| **Time blocking** | Estudo sem horário | Tabela *Agenda* + painel (+ Google Agenda via `.ics`) |
 | **Regra dos 2 minutos** | Dificuldade de começar | Campo *Próximo passo (2 min)* |
 
 Fórmula do quadrante no Airtable:
@@ -119,7 +119,7 @@ flowchart LR
     C --> D[Quadrante calculado<br/>pela fórmula]
     D --> E[Próximo passo de 2 min<br/>gerado com o Claude]
     E --> F[Domingo: planejamento<br/>semanal com o Claude]
-    F --> G[Blocos no Google Agenda]
+    F --> G[Blocos de tempo<br/>Agenda / Google Agenda]
     G --> H[Execução em Pomodoros<br/>timer do painel]
     H --> I[Check-in diário<br/>22h30, 1 minuto]
     I --> J[Domingo: revisão semanal<br/>automação + Claude]
@@ -161,7 +161,7 @@ O **Painel POS** ([link](https://claude.ai/artifact/JZHFT2irWLy7iPYgsBy9dC) · c
 - **Indicadores:** tarefas ativas, Pomodoros feitos/estimados, tarefas no quadrante 2 e prazos de hoje;
 - **Matriz de Eisenhower** com área, prazo e Pomodoros de cada tarefa;
 - **Timer Pomodoro** (25/5/15) ligado às tarefas, contando os ciclos do dia;
-- **Planejamento semanal** em blocos de tempo (o mesmo do Google Agenda);
+- **Planejamento semanal** em blocos de tempo (o mesmo da tabela *Agenda*);
 - **Check-in diário:** gráfico de energia e humor e comparação *linha de base → com o sistema*;
 - **Revisão semanal** e **biblioteca de prompts** com botão de copiar.
 
@@ -175,7 +175,7 @@ Tema claro e escuro automático. Os dados vêm da base do Airtable (exportação
 
 1. **Airtable:** abra o link da base e clique em *Copy base* para ter uma cópia (ou recrie as 5 tabelas da seção 6).
 2. **Automação:** em *Automations*, ative *Domingo 19h: criar Revisão Semanal*.
-3. **Google Agenda:** gere a agenda e importe:
+3. **Google Agenda (opcional, para receber lembretes no celular):** gere a agenda e importe:
    ```bash
    python agenda/gerar_ics.py
    ```
@@ -197,16 +197,14 @@ Tema claro e escuro automático. Os dados vêm da base do Airtable (exportação
 
 As imagens ficam em [evidencias/](evidencias/).
 
-| # | Print | Arquivo |
+| # | Print | Imagem |
 |---|---|---|
 | 1 | Painel POS (dashboard) | ![Dashboard](evidencias/01-dashboard.png) |
-| 2 | Airtable: tabela Tarefas com o quadrante calculado | ![Tarefas](evidencias/02-airtable-tarefas.png) |
+| 2 | Airtable: tabela Tarefas com o quadrante calculado pela fórmula e o próximo passo gerado com IA | ![Tarefas](evidencias/02-airtable-tarefas.png) |
 | 3 | Airtable: tabela Agenda (blocos de tempo) | ![Agenda](evidencias/03-airtable-agenda.png) |
 | 4 | Airtable: Check-in Diário | ![Check-in](evidencias/04-airtable-checkin.png) |
 | 5 | Airtable: Revisão Semanal com resumo da IA | ![Revisão](evidencias/05-airtable-revisao.png) |
-| 6 | Airtable: automação de domingo | ![Automação](evidencias/06-airtable-automacao.png) |
-| 7 | Google Agenda com os blocos importados | ![Google Agenda](evidencias/07-google-agenda.png) |
-| 8 | Claude: exemplo de prompt de planejamento/destravar | ![Claude](evidencias/08-claude-prompt.png) |
+| 6 | Airtable: biblioteca de Prompts de IA | ![Prompts](evidencias/06-airtable-prompts.png) |
 
 ---
 

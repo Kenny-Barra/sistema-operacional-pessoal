@@ -83,7 +83,7 @@ Complementa o GTD: toda tarefa tem um campo **"Próximo passo (2 min)"**, uma a�
 | Ferramenta | Papel no sistema | Justificativa |
 |---|---|---|
 | **Airtable** | Núcleo do sistema: tarefas, agenda, check-in diário, revisão semanal e biblioteca de prompts | Já uso a ferramenta (projeto da ONG Vida Plena); funciona como banco de dados, com fórmulas (quadrante automático), visualizações e **automações nativas**. É mais estruturado que o Trello e permite medir dados ao longo do tempo |
-| **Google Agenda** | Lembretes dos blocos de tempo no celular | Já uso no dia a dia; os blocos foram gerados num arquivo `.ics` e importados de uma vez, com alerta 10 minutos antes de cada bloco |
+| **Google Agenda** | Lembretes dos blocos de tempo no celular | Já uso no dia a dia; os blocos da tabela *Agenda* foram exportados por script para um arquivo `.ics`, que entra no Google Agenda de uma vez, com alerta 10 minutos antes de cada bloco |
 | **Claude (IA)** | Planejamento, priorização, quebra de tarefas, comunicação e revisão | Trabalho com IA; o Claude entende contexto longo e responde em português com tabelas, o que facilita levar o resultado para o Airtable |
 | **Painel POS (dashboard web)** | Visão consolidada: indicadores, Matriz de Eisenhower, Pomodoro, agenda semanal e evolução de energia e humor | O Airtable é ótimo para registrar, mas o painel mostra a semana numa tela só e inclui um timer de Pomodoro ligado às tarefas |
 
