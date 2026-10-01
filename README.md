@@ -1,6 +1,6 @@
 # Sistema Operacional Pessoal (POS)
 
-Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **IA (Claude)** para organizar tarefas, planejar a semana, gerir compromissos, acompanhar foco e bem-estar e melhorar a comunicação profissional. Aplica **GTD**, **Matriz de Eisenhower**, **Pomodoro** e **time blocking**.
+Sistema de produtividade que montei com **Airtable**, **Google Agenda** e **IA (Claude)** para organizar minhas tarefas, planejar a semana, controlar compromissos, acompanhar foco e bem-estar e melhorar a comunicação no trabalho. Usa os métodos **GTD**, **Matriz de Eisenhower**, **Pomodoro** e **time blocking**.
 
 > Trabalho da disciplina **Produtividade e Gestão do Tempo**, UniFECAF, 2º semestre. Aluno: **Kennedy Pereira**.
 
@@ -51,9 +51,9 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 
 ## 3. O problema e a solução
 
-**Antes.** Trabalho presencial das 09h às 18h, academia depois, e o estudo da faculdade ficava com a sobra da noite, sem horário e no momento de menor energia. Nenhuma ferramenta de organização: tudo na memória. Resultado: **procrastinação**, **cansaço**, prazos lembrados tarde e ansiedade com o acúmulo.
+**Antes.** Trabalho presencial das 9h às 18h e vou para a academia depois. O estudo da faculdade ficava com o que sobrava da noite, sem horário e na hora em que eu tinha menos energia. Eu não usava nenhuma ferramenta e guardava tudo na memória. Isso gerava procrastinação, cansaço, prazos lembrados em cima da hora e ansiedade com as tarefas acumuladas.
 
-**Depois.** Um sistema único onde:
+**Depois.** Agora tenho um sistema só, em que:
 
 1. toda tarefa é **capturada** no Airtable (GTD) e classificada automaticamente na **Matriz de Eisenhower**;
 2. cada tarefa tem um **próximo passo de 2 minutos**, gerado com ajuda da IA, para facilitar o começo;
@@ -68,9 +68,9 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 
 | Ferramenta | Uso | Por que |
 |---|---|---|
-| **Airtable** | Núcleo: tarefas, agenda, check-ins, revisões e prompts | Banco de dados visual com fórmulas, visualizações e automações. Mede hábitos ao longo do tempo, o que o Trello não faz bem |
-| **Google Agenda** | Lembretes dos blocos no celular (opcional) | Já faz parte do meu dia; importação única via `.ics` |
-| **Claude** | IA de apoio ao planejamento e à comunicação | Entende contexto longo e responde em tabelas prontas para o Airtable |
+| **Airtable** | Centro do sistema: tarefas, agenda, check-ins, revisões e prompts | Funciona como banco de dados, com fórmulas e automações, e guarda os números de hábitos ao longo das semanas, coisa que o Trello não faz tão bem |
+| **Google Agenda** | Lembretes dos blocos no celular (opcional) | Já uso no dia a dia, e o arquivo `.ics` importa tudo de uma vez |
+| **Claude** | IA de apoio ao planejamento e à comunicação | Entende bem o contexto e responde em tabela, o que facilita passar para o Airtable |
 | **Painel POS** | Visão da semana numa tela | Junta indicadores, matriz, Pomodoro e bem-estar |
 | **Python** | Script `agenda/gerar_ics.py` | Gera a agenda recorrente sem cadastrar evento por evento |
 
@@ -82,7 +82,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 |---|---|---|
 | **GTD** | Tudo na memória | Status *Caixa de entrada* e tabela *Revisão Semanal* |
 | **Matriz de Eisenhower** | Decidir prioridades | Campos *Urgente* e *Importante* + fórmula *Quadrante* |
-| **Pomodoro** | Cansaço e procrastinação | Estimativas em 🍅, check-in e timer no painel |
+| **Pomodoro** | Cansaço e procrastinação | Estimativa em Pomodoros, check-in e timer no painel |
 | **Time blocking** | Estudo sem horário | Tabela *Agenda* + painel (+ Google Agenda via `.ics`) |
 | **Regra dos 2 minutos** | Dificuldade de começar | Campo *Próximo passo (2 min)* |
 
@@ -106,7 +106,7 @@ IF(AND({Urgente},{Importante}),"1. Fazer agora",
 | **Revisão Semanal** | Semana, Vitórias, Obstáculos, Ajustes, Top 3, Resumo da IA, Status | Planejamento semanal e revisão GTD |
 | **Prompts de IA** | Prompt, Quando usar, Objetivo, Texto do prompt | Biblioteca de IA reutilizável |
 
-**Automação:** *Domingo 19h: criar Revisão Semanal* (gatilho agendado → criar registro com status *Planejada*).
+**Automação:** *Domingo 19h: criar Revisão Semanal* (gatilho agendado que cria um registro com status *Planejada*).
 
 ---
 
@@ -162,7 +162,7 @@ O **Painel POS** ([link](https://claude.ai/artifact/JZHFT2irWLy7iPYgsBy9dC) · c
 - **Matriz de Eisenhower** com área, prazo e Pomodoros de cada tarefa;
 - **Timer Pomodoro** (25/5/15) ligado às tarefas, contando os ciclos do dia;
 - **Planejamento semanal** em blocos de tempo (o mesmo da tabela *Agenda*);
-- **Check-in diário:** gráfico de energia e humor e comparação *linha de base → com o sistema*;
+- **Check-in diário:** gráfico de energia e humor e comparação entre a rotina antes e depois do sistema;
 - **Revisão semanal** e **biblioteca de prompts** com botão de copiar.
 
 Tema claro e escuro automático. Os dados vêm da base do Airtable (exportação de 30/09/2026).
@@ -174,7 +174,7 @@ Tema claro e escuro automático. Os dados vêm da base do Airtable (exportação
 ### 10.1 Montar o sistema
 
 1. **Airtable:** abra o link da base e clique em *Copy base* para ter uma cópia (ou recrie as 5 tabelas da seção 6).
-2. **Automação:** em *Automations*, ative *Domingo 19h: criar Revisão Semanal*.
+2. **Automação:** na cópia da base, ative *Domingo 19h: criar Revisão Semanal* em *Automations* (na base original ela já está ativa).
 3. **Google Agenda (opcional, para receber lembretes no celular):** gere a agenda e importe:
    ```bash
    python agenda/gerar_ics.py
@@ -187,7 +187,7 @@ Tema claro e escuro automático. Os dados vêm da base do Airtable (exportação
 1. **Capturou algo?** Crie a tarefa no Airtable com status *Caixa de entrada*.
 2. **Não sabe a prioridade?** Use o prompt *Classificar tarefa* e marque *Urgente*/*Importante*.
 3. **Travou?** Use o prompt *Destravar* e cole o primeiro passo em *Próximo passo (2 min)*.
-4. **Hora do estudo?** Abra o painel, escolha a tarefa no Pomodoro e clique em *Iniciar*. Ao terminar, some os 🍅 em *Pomodoros feitos*.
+4. **Hora do estudo?** Abra o painel, escolha a tarefa no Pomodoro e clique em *Iniciar*. Ao terminar, atualize o campo *Pomodoros feitos* da tarefa.
 5. **22h30:** faça o check-in (energia, humor, sono, academia, Pomodoros, procrastinação).
 6. **Domingo 19h:** a automação cria a revisão; use os prompts *Revisão semanal* e *Planejamento semanal* e registre o resultado.
 
@@ -219,7 +219,7 @@ O sistema entrou em uso em **30/09/2026**. Os dias 28 e 29/09 são uma **linha d
 | Energia (1-5) | 2 | 3 |
 | Tarefas mapeadas | Na memória | 17 no Airtable, com prioridade |
 
-**Ganhos percebidos:** clareza (tudo num lugar só), medição do estudo pela primeira vez, mais facilidade para começar e saúde e descanso entrando na agenda.
+**O que já mudou:** tudo está num lugar só, consigo medir meu estudo pela primeira vez, começar ficou mais fácil e saúde e descanso entraram na agenda.
 
 **Metas das próximas semanas:** 12 Pomodoros de estudo por semana, 5 dias sem procrastinação, 7h de sono e academia mantida 5x por semana.
 
@@ -229,7 +229,7 @@ O sistema entrou em uso em **30/09/2026**. Os dias 28 e 29/09 são uma **linha d
 
 | Entregável | Pontos | Onde |
 |---|---|---|
-| Parte Teórica: Análise e Discussão | 1,5 | [docs/parte-teorica.md](docs/parte-teorica.md) (+ `.docx`/`.pdf` na pasta de entregáveis) |
+| Parte Teórica: Análise e Discussão | 1,5 | [docs/parte-teorica.md](docs/parte-teorica.md) (PDF enviado no AVA) |
 | Parte Prática: Sistema Operacional Pessoal | 3,5 | Base no Airtable, painel, agenda `.ics`, prompts e este README |
 | Vídeo Pitch (até 4 min) | 2,0 | https://youtu.be/X9Nvlp9Ii6c |
 

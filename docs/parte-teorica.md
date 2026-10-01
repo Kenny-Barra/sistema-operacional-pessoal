@@ -1,7 +1,7 @@
-# Parte Teórica – Análise e Discussão
+# Parte Teórica: Análise e Discussão
 
 **Projeto:** Meu Sistema Operacional Pessoal: Utilizando IA para Gerenciar Tempo, Comunicação e Produtividade
-**Disciplina:** Produtividade e Gestão do Tempo – UniFECAF, 2º semestre
+**Disciplina:** Produtividade e Gestão do Tempo, UniFECAF, 2º semestre
 **Aluno:** Kennedy Pereira
 
 **Links do projeto:**
@@ -13,157 +13,150 @@
 
 ---
 
-## 1. Diagnóstico da rotina atual
+## 1. Diagnóstico da minha rotina
 
-Trabalho como **analista de IA e Automação**, em regime **presencial, das 09h às 18h**, e curso **IA e Automação na UniFECAF** a distância. Antes deste projeto, meu dia típico seguia esta sequência:
+Trabalho como analista de IA e Automação, de forma presencial, das 9h às 18h. Também curso IA e Automação na UniFECAF, a distância. Antes deste trabalho, meu dia era mais ou menos assim:
 
-| Horário aproximado | Atividade |
+| Horário | O que eu fazia |
 |---|---|
 | Manhã | Acordar e ir para o trabalho |
-| 09h – 18h | Expediente presencial |
+| 9h às 18h | Expediente presencial |
 | Depois do trabalho | Academia |
-| Noite | Voltar para casa, estudar "quando dava", banho e dormir |
+| À noite | Voltar para casa, estudar quando dava, tomar banho e dormir |
 
-A rotina tinha uma única âncora fixa: a **academia**, que funciona bem e que eu mantenho com regularidade. Todo o resto era feito "de cabeça". Eu **não usava nenhuma ferramenta de organização**: as tarefas da faculdade, do trabalho e da vida pessoal ficavam na memória ou espalhadas em conversas de WhatsApp e e-mails.
+O único compromisso fixo que eu tinha era a academia, e ela sempre funcionou bem. O resto ficava na cabeça. Eu não usava nenhuma ferramenta para me organizar, então as coisas da faculdade, do trabalho e da vida pessoal ficavam na memória ou perdidas em conversas de WhatsApp e e-mail.
 
-Ao montar o diagnóstico, percebi três pontos importantes:
+Quando parei para fazer esse diagnóstico, percebi três coisas. A primeira é que eu não sabia quantas horas estudava por semana, então não tinha como saber se era pouco ou muito. A segunda é que o estudo sempre ficava com o que sobrava do dia, depois do trabalho e da academia, quando eu já estava sem energia, sem horário certo e sem saber direito o que ia estudar. A terceira é que eu lembrava dos prazos tarde. Sem uma lista, os trabalhos da faculdade só ganhavam atenção perto da data de entrega.
 
-1. **Eu não sabia quantas horas estudava por semana.** Sem medição, não havia como saber se o tempo de estudo era suficiente nem como melhorá-lo.
-2. **O estudo ficava com a "sobra" do dia.** Ele acontecia depois do trabalho e da academia, no momento de menor energia, sem horário definido e sem um objetivo claro para a sessão.
-3. **Prazos eram lembrados tarde.** Sem uma lista central, o trabalho da faculdade só ganhava atenção quando o prazo já estava próximo, o que gerava acúmulo e pressão.
+## 2. Principais desafios de produtividade
 
-## 2. Principais desafios de produtividade identificados
-
-| Desafio | Como aparece na rotina | Consequência |
+| Desafio | Como aparece no dia a dia | O que causa |
 |---|---|---|
-| **Procrastinação** | Adiar o estudo e os trabalhos da faculdade, principalmente à noite | Acúmulo de tarefas perto do prazo |
-| **Cansaço** | Chegar ao momento de estudo depois de 9h de trabalho e da academia | Pouca concentração e sessões que não começam |
-| **Falta de sistema** | Nenhuma ferramenta; tudo na memória | Esquecimento, sensação de "estar devendo algo" o tempo todo |
-| **Interrupções digitais** | Celular e redes sociais durante o estudo | Foco fragmentado |
-| **Saúde mental** | Ansiedade e estresse, com fases de desânimo | Energia baixa, mais procrastinação, ciclo que se retroalimenta |
+| Procrastinação | Deixar o estudo e os trabalhos para depois, principalmente à noite | Tarefas acumulando perto do prazo |
+| Cansaço | Chegar na hora de estudar depois de 9 horas de trabalho e da academia | Pouca concentração, e às vezes o estudo nem começa |
+| Falta de organização | Nenhuma ferramenta, tudo na memória | Esquecimentos e a sensação de estar sempre devendo alguma coisa |
+| Celular | Redes sociais e notificações durante o estudo | Foco quebrado |
+| Saúde mental | Ansiedade e estresse | Menos energia e mais procrastinação |
 
-O ponto central do diagnóstico é que **procrastinação, cansaço e ansiedade formam um ciclo**: o cansaço faz adiar; o adiamento gera acúmulo; o acúmulo aumenta a ansiedade; a ansiedade piora o sono e a energia; e com menos energia, adia-se ainda mais. Por isso o sistema não poderia ser só uma lista de tarefas. Ele precisava **reduzir o esforço de começar**, **proteger a energia** e **tirar a carga mental da cabeça**.
+Olhando a tabela, percebi que esses problemas estão ligados. Quando estou cansado, eu adio. As tarefas acumulam, a ansiedade aumenta, durmo pior e no dia seguinte tenho menos energia ainda. Por isso eu sabia que uma lista de tarefas sozinha não ia resolver. O sistema precisava facilitar o começo das tarefas, cuidar da minha energia e tirar as coisas da minha cabeça.
 
-Sobre comunicação, o desafio é menor, mas existe: no trabalho, mensagens chegam o dia inteiro por vários canais, e responder tudo na hora interrompe o trabalho profundo.
+Sobre comunicação, não tenho grandes problemas, mas no trabalho as mensagens chegam o dia todo por vários canais. Responder tudo na hora atrapalha quando preciso me concentrar.
 
 ## 3. Métodos utilizados
 
-O sistema combina quatro métodos, cada um escolhido para atacar um desafio específico do diagnóstico:
+Usei quatro métodos, e cada um foi escolhido por causa de um problema do diagnóstico.
 
-### 3.1 GTD – Getting Things Done (David Allen)
+### 3.1 GTD (Getting Things Done)
 
-**Problema que resolve:** tudo na memória.
-O GTD parte da ideia de que a mente serve para ter ideias, não para guardá-las. Apliquei três etapas do método:
-
-- **Capturar:** toda tarefa nova entra na tabela *Tarefas* com status *Caixa de entrada*.
-- **Esclarecer e organizar:** cada tarefa recebe área, prazo, estimativa e um **próximo passo concreto**.
-- **Revisar:** todo domingo às 19h faço a **Revisão Semanal**, registrada numa tabela própria.
+O GTD, de David Allen, parte da ideia de que a cabeça serve para ter ideias e não para guardar tarefas. Era exatamente o meu problema. Usei três partes do método. Toda tarefa nova é anotada no Airtable com o status "Caixa de entrada" (captura). Depois cada uma recebe área, prazo, estimativa de tempo e um próximo passo concreto (organização). E todo domingo às 19h faço uma revisão da semana, que fica registrada numa tabela própria (revisão).
 
 ### 3.2 Matriz de Eisenhower
 
-**Problema que resolve:** decidir o que fazer primeiro sem gastar energia com isso.
-Cada tarefa é marcada como *Urgente* e/ou *Importante*, e uma fórmula no Airtable calcula o quadrante automaticamente:
+Para decidir o que fazer primeiro, marco cada tarefa como urgente, importante, as duas coisas ou nenhuma. Uma fórmula no Airtable coloca a tarefa no quadrante certo automaticamente:
 
 | | Urgente | Não urgente |
 |---|---|---|
-| **Importante** | 1. Fazer agora | 2. Agendar |
-| **Não importante** | 3. Delegar / limitar | 4. Eliminar |
+| Importante | 1. Fazer agora | 2. Agendar |
+| Não importante | 3. Delegar ou limitar | 4. Eliminar |
 
-O objetivo é deslocar o tempo para o **quadrante 2** (importante e não urgente), onde estão o trabalho com prazo em 15/10, as aulas, a saúde e o sono. Quando essas tarefas são feitas com antecedência, elas não viram urgências no quadrante 1.
+A ideia é passar mais tempo no quadrante 2, das coisas importantes que ainda não são urgentes. É onde estão o trabalho da faculdade com prazo em 15/10, as aulas, a academia e o sono. Se eu faço essas tarefas com antecedência, elas não viram correria depois.
 
-### 3.3 Técnica Pomodoro (Francesco Cirillo)
+### 3.3 Técnica Pomodoro
 
-**Problema que resolve:** cansaço e procrastinação na hora de estudar.
-Ciclos de **25 minutos de foco e 5 de pausa**, com pausa longa de 15 minutos a cada 4 ciclos. A decisão mais importante foi definir uma **meta mínima pequena: 2 Pomodoros por noite**. Começar 25 minutos, mesmo cansado, é muito mais fácil do que "estudar a noite toda". Cada tarefa é estimada em Pomodoros, o que também mede o tempo de estudo, resolvendo o problema de "não saber quanto estudo".
+O Pomodoro, criado por Francesco Cirillo, divide o trabalho em blocos de 25 minutos de foco com 5 minutos de pausa, e uma pausa maior de 15 minutos a cada 4 blocos. Escolhi essa técnica por causa do cansaço. Coloquei uma meta pequena de propósito: 2 Pomodoros por noite. Começar 25 minutos cansado é bem mais fácil do que pensar em "estudar a noite toda". Também passei a estimar as tarefas em Pomodoros, e assim consigo medir quanto estudo, coisa que eu não sabia antes.
 
-### 3.4 Time blocking (blocos de tempo)
+### 3.4 Blocos de tempo (time blocking)
 
-**Problema que resolve:** estudo sem horário.
-Os compromissos fixos viraram blocos na agenda semanal: trabalho, academia, um bloco de **descompressão sem tela** antes do estudo, estudo de segunda a quinta às 20h30, estudo longo no sábado de manhã, revisão semanal no domingo e **horário de desligar as telas** às 22h30. Sexta à noite fica livre de propósito: descanso também é planejado.
+Coloquei os compromissos fixos na agenda da semana: trabalho, academia, um intervalo sem tela antes de estudar, estudo de segunda a quinta às 20h30, um estudo mais longo no sábado de manhã, a revisão de domingo e o horário de desligar as telas às 22h30. A sexta à noite ficou livre de propósito, porque descanso também precisa estar planejado.
 
 ### 3.5 Regra dos 2 minutos
 
-Complementa o GTD: toda tarefa tem um campo **"Próximo passo (2 min)"**, uma ação tão pequena que pode ser feita imediatamente (por exemplo, "abrir o AVA e dar play na primeira aula pendente"). A procrastinação costuma estar no início da tarefa, não nela inteira.
+Junto com o GTD, cada tarefa tem um campo chamado "Próximo passo (2 min)". É uma ação tão pequena que dá para fazer na hora, como "abrir o AVA e dar play na primeira aula pendente". Percebi que o mais difícil para mim é começar, e depois que começo eu geralmente continuo.
 
-## 4. Ferramentas escolhidas e justificativa
+## 4. Ferramentas escolhidas e por quê
 
-| Ferramenta | Papel no sistema | Justificativa |
+| Ferramenta | Para que uso | Por que escolhi |
 |---|---|---|
-| **Airtable** | Núcleo do sistema: tarefas, agenda, check-in diário, revisão semanal e biblioteca de prompts | Já uso a ferramenta (projeto da ONG Vida Plena); funciona como banco de dados, com fórmulas (quadrante automático), visualizações e **automações nativas**. É mais estruturado que o Trello e permite medir dados ao longo do tempo |
-| **Google Agenda** | Lembretes dos blocos de tempo no celular | Já uso no dia a dia; os blocos da tabela *Agenda* foram exportados por script para um arquivo `.ics`, que entra no Google Agenda de uma vez, com alerta 10 minutos antes de cada bloco |
-| **Claude (IA)** | Planejamento, priorização, quebra de tarefas, comunicação e revisão | Trabalho com IA; o Claude entende contexto longo e responde em português com tabelas, o que facilita levar o resultado para o Airtable |
-| **Painel POS (dashboard web)** | Visão consolidada: indicadores, Matriz de Eisenhower, Pomodoro, agenda semanal e evolução de energia e humor | O Airtable é ótimo para registrar, mas o painel mostra a semana numa tela só e inclui um timer de Pomodoro ligado às tarefas |
+| Airtable | Centro do sistema: tarefas, agenda, check-in diário, revisão semanal e biblioteca de prompts | Já usei em outro trabalho da faculdade (ONG Vida Plena). Ele funciona como um banco de dados, tem fórmulas e automações e guarda os números do dia a dia para eu acompanhar a evolução |
+| Google Agenda | Lembretes dos blocos de tempo no celular | Já uso no dia a dia. Os blocos da tabela Agenda foram exportados por um script para um arquivo .ics, que pode ser importado de uma vez, com aviso 10 minutos antes de cada bloco |
+| Claude (IA) | Planejar, priorizar, quebrar tarefas grandes, escrever mensagens e revisar a semana | Trabalho com IA e já tenho familiaridade. Ele entende bem o contexto e responde em português, inclusive em tabela, o que facilita passar para o Airtable |
+| Painel POS | Ver a semana numa tela só: indicadores, matriz, Pomodoro, agenda e evolução de energia e humor | O Airtable é bom para registrar, mas o painel junta tudo e tem um timer de Pomodoro ligado às tarefas |
 
-O Trello foi considerado, mas descartado: ele é ótimo para fluxo visual (kanban), mas não mede hábitos, energia e Pomodoros com a mesma facilidade, e eu queria **dados** para acompanhar a evolução.
+Pensei em usar o Trello, que é muito bom para ver as tarefas em colunas (kanban). Mas ele não guarda com a mesma facilidade dados como energia, sono e quantidade de Pomodoros, e eu queria acompanhar esses números ao longo das semanas.
 
-## 5. Como a IA foi utilizada para apoiar a organização
+## 5. Como a IA ajudou na organização
 
-A IA entrou em cinco pontos do sistema. Os prompts estão salvos na tabela *Prompts de IA* do Airtable e na pasta `prompts/` do projeto, para serem reutilizados sem precisar escrever do zero:
+Usei o Claude em cinco momentos. Os prompts ficam salvos na tabela "Prompts de IA" do Airtable e na pasta `prompts/` do projeto, assim não preciso escrever tudo de novo toda vez.
 
-1. **Planejamento semanal:** no domingo, envio ao Claude as tarefas da caixa de entrada com prazos e estimativas. Ele classifica na Matriz de Eisenhower, distribui as tarefas nos blocos de estudo **sem passar da capacidade real da semana** e sugere um Top 3.
-2. **Classificação rápida:** para tarefas novas no meio da semana, um prompt curto devolve "urgente/importante" com uma justificativa de uma frase.
-3. **Combate à procrastinação:** quando travo numa tarefa, o prompt "Destravar" quebra a tarefa em até 5 passos de 1 Pomodoro, com o primeiro passo executável em 2 minutos. Os textos do campo *Próximo passo* das tarefas foram gerados assim.
-4. **Comunicação profissional:** reescrita de mensagens com contexto, pedido claro, prazo e próximo passo, em versão para WhatsApp e para e-mail.
-5. **Revisão semanal e estudo:** o Claude lê os check-ins diários e as tarefas da semana, resume a semana, aponta padrões (por exemplo, a relação entre sono e foco) e sugere no máximo dois ajustes. Também faz fichamentos de 1 página das aulas.
+1. **Planejamento da semana.** No domingo, mando para o Claude a lista de tarefas com prazos e estimativas. Ele classifica na Matriz de Eisenhower, distribui as tarefas nos horários de estudo sem passar do tempo que eu realmente tenho e sugere as 3 prioridades da semana.
+2. **Classificação rápida.** Quando aparece uma tarefa nova no meio da semana, um prompt curto me diz se ela é urgente e/ou importante, com uma frase explicando.
+3. **Quando eu travo.** Peço para o Claude dividir a tarefa em até 5 passos de um Pomodoro cada, sendo que o primeiro precisa caber em 2 minutos. Os textos do campo "Próximo passo" das tarefas foram feitos assim.
+4. **Mensagens de trabalho.** Uso um prompt que reescreve a mensagem com contexto, pedido, prazo e próximo passo, numa versão para WhatsApp e outra para e-mail.
+5. **Revisão da semana e estudo.** O Claude lê meus check-ins e as tarefas da semana, resume como foi, mostra padrões (por exemplo, a relação entre sono e foco) e sugere no máximo dois ajustes. Também uso para fazer resumos de uma página das aulas.
 
-A IA também foi usada para **construir** o sistema: o Claude me ajudou a modelar as tabelas, escrever a fórmula do quadrante, gerar o arquivo da agenda e montar o painel.
+Também usei a IA para montar o próprio sistema. Ela me ajudou a pensar nas tabelas, a escrever a fórmula da matriz, a gerar o arquivo da agenda e a criar o painel.
 
-**Uso consciente.** A IA **sugere** e eu **decido**. Os prompts pedem respostas curtas e práticas, e eu reviso cada classificação antes de aceitar. Não envio dados sensíveis de terceiros nem informações confidenciais do trabalho; para tarefas do trabalho, uso descrições genéricas.
+Tomo alguns cuidados nesse uso. A IA sugere, mas quem decide sou eu, e reviso as classificações antes de aceitar. Também não coloco informações confidenciais da empresa nem dados de outras pessoas. Para tarefas do trabalho, uso descrições genéricas.
 
-### Automação
+Além da IA, configurei uma automação no Airtable: todo domingo às 19h ela cria o registro da revisão semanal. Assim a revisão não depende de eu lembrar.
 
-Além do uso direto da IA, o Airtable tem uma **automação semanal**: todo domingo às 19h ela cria o registro da revisão semanal com status *Planejada*. Assim, o ritual de revisão não depende de eu lembrar.
-
-## 6. Estratégias para melhorar comunicação, reduzir procrastinação e preservar a saúde mental
+## 6. Estratégias para comunicação, procrastinação e saúde mental
 
 ### 6.1 Comunicação
 
-- **Janelas de mensagens:** responder mensagens e e-mails em três janelas fixas (09h15, 13h30 e 17h15), com notificações silenciadas fora delas. Isso reduz interrupções sem deixar ninguém sem resposta.
-- **Mensagens completas:** usar o prompt "Mensagem profissional" para que cada mensagem tenha contexto, pedido, prazo e próximo passo, o que reduz idas e vindas.
-- **Reuniões com pauta:** pedir pauta antes ou resolver por mensagem quando a reunião não for necessária.
+- Responder mensagens e e-mails em três horários fixos (9h15, 13h30 e 17h15), com as notificações silenciadas no resto do tempo. Assim ninguém fica sem resposta e eu não sou interrompido o dia todo.
+- Usar o prompt de mensagem profissional para que cada mensagem já tenha contexto, pedido e prazo, evitando várias idas e vindas.
+- Pedir a pauta antes das reuniões ou resolver por mensagem quando a reunião não for necessária.
 
 ### 6.2 Procrastinação
 
-- **Começar pequeno:** meta mínima de 2 Pomodoros e "próximo passo de 2 minutos" em cada tarefa.
-- **Remover a decisão:** o horário de estudo já está na agenda e a tarefa da noite já foi escolhida no domingo. À noite eu só executo.
-- **Reduzir gatilhos:** apps de redes sociais fora da tela inicial do celular durante o bloco de estudo.
-- **Quebrar entregas grandes:** o trabalho com prazo em 15/10 foi dividido em três tarefas com prazos semanais, para não acumular na última semana.
+- Começar pequeno, com a meta mínima de 2 Pomodoros e o próximo passo de 2 minutos em cada tarefa.
+- Não precisar decidir na hora. O horário de estudo já está na agenda e a tarefa da noite foi escolhida no domingo, então à noite eu só executo.
+- Deixar os aplicativos de redes sociais fora da tela inicial do celular durante o estudo.
+- Dividir entregas grandes. O trabalho com prazo em 15/10 foi separado em três partes, uma por semana, para não ficar tudo para os últimos dias.
 
 ### 6.3 Saúde mental e bem-estar
 
-Este é o ponto mais sensível do diagnóstico. Tenho lidado com ansiedade e estresse, e entendi que **produtividade sem cuidado com a saúde não se sustenta**. As estratégias adotadas foram:
+Essa foi a parte mais difícil de escrever. Tenho lidado com ansiedade e estresse, e entendi que não adianta ser produtivo se a saúde não acompanha. O que coloquei no sistema:
 
-- **Proteger a academia** como compromisso inegociável, por ser o principal regulador de estresse da minha rotina.
-- **Proteger o sono:** telas desligadas às 22h30 e celular fora do quarto, com meta de 7 horas.
-- **Pausas sem tela:** bloco de descompressão entre a academia e o estudo, e pausas do Pomodoro longe do celular.
-- **Check-in diário de 1 minuto:** registrar energia, humor, sono e hábitos. Isso torna visível o que antes era só sensação e ajuda a perceber padrões cedo.
-- **Descanso planejado:** sexta à noite e parte do fim de semana livres.
-- **Buscar apoio profissional:** incluí no próprio sistema a tarefa de buscar acompanhamento psicológico (plano de saúde, SUS ou serviço da faculdade), no quadrante "importante". Ferramentas organizam a rotina, mas não substituem o cuidado com a saúde mental.
+- A academia virou compromisso que não sai da agenda, porque é o que mais me ajuda a aliviar o estresse.
+- Telas desligadas às 22h30 e celular fora do quarto, com meta de 7 horas de sono.
+- Um intervalo sem tela entre a academia e o estudo, e as pausas do Pomodoro longe do celular.
+- Um check-in de 1 minuto por dia, anotando energia, humor, sono e hábitos. Assim consigo ver no papel o que antes era só sensação e perceber quando a semana está pesada.
+- Sexta à noite e parte do fim de semana livres.
+- Coloquei no próprio sistema a tarefa de procurar acompanhamento psicológico, pelo plano de saúde, pelo SUS ou pela faculdade. Ferramenta ajuda a organizar a rotina, mas não substitui esse cuidado.
 
-## 7. Resultados iniciais e próximos passos
+## 7. Primeiros resultados e próximos passos
 
-O sistema começou a ser usado em **30/09/2026**. Os dias 28 e 29/09 foram registrados como **linha de base**, com valores estimados a partir da rotina anterior. No primeiro dia de uso, o trabalho desta disciplina foi feito em **5 Pomodoros**, sem procrastinação e com mais clareza do que precisava ser entregue.
+Comecei a usar o sistema em 30/09/2026. Os dias 28 e 29/09 entraram como ponto de partida, com valores que estimei a partir da rotina que eu tinha antes. No primeiro dia de uso fiz este trabalho em 5 Pomodoros, sem procrastinar, sabendo exatamente o que precisava entregar.
 
-Os ganhos percebidos até aqui são:
+O que já percebi de diferença:
 
-- **Clareza:** todas as tarefas estão em um lugar só, com prioridade definida. A sensação de "estar esquecendo algo" diminuiu.
-- **Medição:** pela primeira vez sei quanto estudo, em Pomodoros.
-- **Início mais fácil:** com o próximo passo já escrito, começar exige menos energia.
-- **Equilíbrio:** saúde, sono e descanso entraram na agenda com o mesmo peso dos compromissos de trabalho e estudo.
+- Tudo está num lugar só e com prioridade definida. Aquela sensação de estar esquecendo alguma coisa diminuiu bastante.
+- Pela primeira vez consigo medir quanto estudo, contando os Pomodoros.
+- Com o próximo passo já escrito, fica mais fácil começar mesmo cansado.
+- Saúde, sono e descanso entraram na agenda junto com trabalho e estudo.
 
-Para as próximas semanas, os indicadores a acompanhar no painel são: **Pomodoros de estudo por semana** (meta: 12), **dias sem procrastinação**, **média de energia e humor** e **horas de sono**. A Revisão Semanal com o Claude vai usar esses dados para ajustar o sistema, que deve evoluir com a rotina.
+Nas próximas semanas vou acompanhar no painel a quantidade de Pomodoros de estudo (meta de 12 por semana), os dias sem procrastinar, a média de energia e humor e as horas de sono. A revisão de domingo com o Claude vai usar esses dados para ir ajustando o sistema conforme a rotina mudar.
 
 ## 8. Conclusão
 
-O principal aprendizado deste projeto é que meu problema não era falta de tempo nem de conhecimento técnico, e sim **falta de um sistema** e de **energia no momento certo**. Ao juntar métodos clássicos (GTD, Eisenhower, Pomodoro e time blocking), ferramentas simples (Airtable e Google Agenda) e a IA como assistente de planejamento e comunicação, a organização deixou de depender da memória e da força de vontade. A tecnologia, usada com consciência, serviu para **reduzir a carga mental** e abrir espaço para o que importa: aprender, trabalhar bem e cuidar da saúde.
+Com este trabalho percebi que o que me faltava não era tempo nem conhecimento técnico. Faltava um sistema, e faltava energia na hora em que eu deixava para estudar. Juntando métodos conhecidos (GTD, Eisenhower, Pomodoro e blocos de tempo), ferramentas simples (Airtable e Google Agenda) e a IA como apoio no planejamento e na comunicação, minha organização parou de depender só da memória e da força de vontade. Usada com cuidado, a tecnologia tirou peso da minha cabeça e deixou mais espaço para estudar, trabalhar bem e cuidar da saúde.
 
 ## Referências
 
-- ALLEN, David. *A arte de fazer acontecer: o método GTD – Getting Things Done*. Rio de Janeiro: Sextante, 2016.
-- CIRILLO, Francesco. *The Pomodoro Technique*. Berlim: FC Garage, 2006.
-- COVEY, Stephen R. *Os 7 hábitos das pessoas altamente eficazes*. Rio de Janeiro: BestSeller, 2017 (Matriz do tempo / Eisenhower).
-- AIRTABLE. *Airtable Support: Automations e Formula field reference*. Disponível em: https://support.airtable.com.
-- NOTION. *Notion Guides*. Disponível em: https://www.notion.so/help.
-- TRELLO. *Trello Guide*. Disponível em: https://trello.com/guide.
-- ASANA. *Asana Academy*. Disponível em: https://academy.asana.com.
-- UNIFECAF. *Disciplina Produtividade e Gestão do Tempo*: conteúdos sobre Gestão do Tempo, Comunicação, Saúde Mental e Bem-Estar no Trabalho.
+ALLEN, David. *A arte de fazer acontecer: o método GTD (Getting Things Done)*. Rio de Janeiro: Sextante, 2016.
+
+AIRTABLE. *Airtable Support*. Disponível em: https://support.airtable.com. Acesso em: 30 set. 2026.
+
+ASANA. *Asana Academy*. Disponível em: https://academy.asana.com. Acesso em: 30 set. 2026.
+
+CIRILLO, Francesco. *The Pomodoro Technique*. Berlim: FC Garage, 2006.
+
+COVEY, Stephen R. *Os 7 hábitos das pessoas altamente eficazes*. Rio de Janeiro: BestSeller, 2017.
+
+NOTION. *Notion Guides*. Disponível em: https://www.notion.so/help. Acesso em: 30 set. 2026.
+
+TRELLO. *Trello Guide*. Disponível em: https://trello.com/guide. Acesso em: 30 set. 2026.
+
+UNIFECAF. *Produtividade e Gestão do Tempo*: conteúdos sobre gestão do tempo, comunicação, saúde mental e bem-estar no trabalho. Material da disciplina, 2026.

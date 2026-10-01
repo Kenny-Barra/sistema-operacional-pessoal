@@ -69,9 +69,9 @@ TAREFAS: [colar]
 
 **Saída usada no Airtable:**
 1. *(2 min)* Abrir o AVA e dar play na primeira aula pendente.
-2. *(🍅 1)* Assistir à primeira aula anotando 3 ideias.
-3. *(🍅 2)* Segunda aula, mesmo formato.
-4. *(🍅 3)* Terceira aula.
-5. *(🍅 4)* Colar as anotações no prompt "Fichamento de aula".
+2. *(Pomodoro 1)* Assistir à primeira aula anotando 3 ideias.
+3. *(Pomodoro 2)* Segunda aula, mesmo formato.
+4. *(Pomodoro 3)* Terceira aula.
+5. *(Pomodoro 4)* Colar as anotações no prompt "Fichamento de aula".
 
 O passo 1 virou o campo **Próximo passo (2 min)** da tarefa.

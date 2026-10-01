@@ -227,7 +227,7 @@ const review = {
   "Top 3 da semana":"1. Entregar Produtividade e Gestão do Tempo (30/09)<br>2. Assistir às aulas pendentes no AVA<br>3. Entender o enunciado do trabalho com prazo em 15/10",
   "Obstáculos":"Cansaço depois do trabalho e da academia, estudo sem horário, celular interrompendo o foco e ansiedade com prazos acumulados.",
   "Ajustes":"Estudo com horário fixo às 20:30, meta mínima de 2 Pomodoros, celular fora do quarto às 22:30 e check-in diário de 1 minuto.",
-  "Resumo da IA":"Semana de transição. O gargalo não é falta de tempo, e sim chegar cansado ao bloco de estudo sem um primeiro passo claro. Manter o estudo curto (2 Pomodoros), sempre começando pelo “próximo passo de 2 minutos” da tarefa, e proteger o sono, que é o que mais pesa na energia e no humor."
+  "Resumo da IA":"Semana de transição. O maior problema foi chegar cansado na hora de estudar sem saber por onde começar. Sugestão: manter o estudo curto (2 Pomodoros), sempre começando pelo próximo passo de 2 minutos da tarefa, e cuidar do sono, que é o que mais pesa na energia e no humor."
 };
 const prompts = [
   {n:"Planejamento semanal",w:"Domingo (planejamento)",x:"Você é meu assistente de planejamento. Minha rotina fixa: trabalho presencial 09h-18h (seg-sex), academia 18h30-19h30, estudo 20h30-21h25 (seg-qui, 2 Pomodoros) e sábado 09h30-11h30 (4 Pomodoros). Abaixo estão minhas tarefas com prazo e estimativa em Pomodoros. 1) Classifique cada uma na Matriz de Eisenhower. 2) Distribua as tarefas dos quadrantes 1 e 2 nos blocos da semana sem passar da capacidade. 3) Liste o que deve ser eliminado ou adiado. 4) Escolha um Top 3 da semana. Responda em tabela.\n\nTAREFAS:\n[colar a exportação da view 'Caixa de entrada' do Airtable]"},
@@ -281,7 +281,7 @@ w += `<div class="hours" style="height:${(H1-H0)*PX}px">${hrs}</div>`;
 for(let i=0;i<7;i++){
   const bl = blocks.filter(b=>b.d.includes(i)).map(b=>{
     const top=(toH(b.s)-H0)*PX, h=(toH(b.e)-toH(b.s))*PX-2;
-    return `<div class="blk t-${b.ty}" style="top:${top}px;height:${h}px" title="${b.n} ${b.s}–${b.e}">${b.n}${h>26?`<b>${b.s}–${b.e}</b>`:""}</div>`;
+    return `<div class="blk t-${b.ty}" style="top:${top}px;height:${h}px" title="${b.n} ${b.s} às ${b.e}">${b.n}${h>26?`<b>${b.s} às ${b.e}</b>`:""}</div>`;
   }).join("");
   w += `<div class="col" style="height:${(H1-H0)*PX}px;--h:${PX*2}px">${bl}</div>`;
 }
