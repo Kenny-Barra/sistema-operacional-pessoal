@@ -1,0 +1,116 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//POS Kennedy//Sistema Operacional Pessoal//PT-BR
+CALSCALE:GREGORIAN
+X-WR-CALNAME:POS - Sistema Operacional Pessoal
+X-WR-TIMEZONE:America/Sao_Paulo
+BEGIN:VEVENT
+UID:pos-bloco-1@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261001T090000
+DTEND;TZID=America/Sao_Paulo:20261001T180000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+SUMMARY:Expediente (presencial)
+DESCRIPTION:Mensagens em 3 janelas: 09:15, 13:30 e 17:15.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Expediente (presencial)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-2@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261001T183000
+DTEND;TZID=America/Sao_Paulo:20261001T193000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+SUMMARY:Academia
+DESCRIPTION:Compromisso fixo: principal regulador de estresse e ansiedade.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Academia
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-3@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261001T194500
+DTEND;TZID=America/Sao_Paulo:20261001T203000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+SUMMARY:Jantar e descompressão (sem tela)
+DESCRIPTION:Transição antes do estudo.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Jantar e descompressão (sem tela)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-4@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261001T203000
+DTEND;TZID=America/Sao_Paulo:20261001T212500
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH
+SUMMARY:Estudo: 2 Pomodoros
+DESCRIPTION:2 x (25 min foco + 5 min pausa). Comece pelo 'próximo passo de 2 min' da tarefa.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Estudo: 2 Pomodoros
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-5@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261003T093000
+DTEND;TZID=America/Sao_Paulo:20261003T113000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+SUMMARY:Estudo longo: 4 Pomodoros
+DESCRIPTION:Aulas atrasadas e trabalhos da faculdade.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Estudo longo: 4 Pomodoros
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-6@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261004T190000
+DTEND;TZID=America/Sao_Paulo:20261004T193000
+RRULE:FREQ=WEEKLY;BYDAY=SU
+SUMMARY:Revisão semanal + planejamento com IA
+DESCRIPTION:Revisão GTD no Airtable + prompts 'Revisão semanal' e 'Planejamento semanal' no Claude.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Revisão semanal + planejamento com IA
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-bloco-7@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;TZID=America/Sao_Paulo:20261001T223000
+DTEND;TZID=America/Sao_Paulo:20261001T230000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA,SU
+SUMMARY:Desligar telas e check-in diário
+DESCRIPTION:Check-in de 1 minuto no Airtable e celular fora do quarto.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Desligar telas e check-in diário
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pos-entrega-1@kennedy-pos
+DTSTAMP:20261001T005333Z
+DTSTART;VALUE=DATE:20261015
+SUMMARY:ENTREGA: trabalho da faculdade (prazo 15/10)
+BEGIN:VALARM
+TRIGGER:-P3D
+ACTION:DISPLAY
+DESCRIPTION:ENTREGA: trabalho da faculdade (prazo 15/10)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

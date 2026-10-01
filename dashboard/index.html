@@ -1,0 +1,359 @@
+<title>Painel POS do Kennedy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F2; --surface:#FFFFFF; --ink:#1B2420; --muted:#5B6862; --line:#DCE2DE;
+  --accent:#2F6B57; --accent-soft:#E1EEE8;
+  --q1:#B5452F; --q1-soft:#F6E4DF; --q2:#2F6B57; --q2-soft:#E1EEE8;
+  --q3:#B07A16; --q3-soft:#F5ECD8; --q4:#6F7782; --q4-soft:#ECEEF0;
+  --energy:#C08A1E; --mood:#B4577A; --good:#2F7D4F; --warn:#B07A16; --crit:#B5452F;
+  --blk-trab:#DDE7F3; --blk-est:#E8E1F2; --blk-acad:#DCEFE3; --blk-desc:#DCEEEE; --blk-plan:#F6E6D3;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", Consolas, ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121815; --surface:#1A221E; --ink:#E6ECE8; --muted:#9AA8A1; --line:#2C3832;
+    --accent:#7CC3A6; --accent-soft:#1F3229;
+    --q1:#E58A73; --q1-soft:#3A2420; --q2:#7CC3A6; --q2-soft:#1F3229;
+    --q3:#E0B45A; --q3-soft:#362C17; --q4:#A3ACB6; --q4-soft:#262B30;
+    --energy:#E0B45A; --mood:#E08AAB; --good:#74C493; --warn:#E0B45A; --crit:#E58A73;
+    --blk-trab:#22303F; --blk-est:#2D2640; --blk-acad:#1F3328; --blk-desc:#1E3333; --blk-plan:#3A2E1F;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121815; --surface:#1A221E; --ink:#E6ECE8; --muted:#9AA8A1; --line:#2C3832;
+  --accent:#7CC3A6; --accent-soft:#1F3229;
+  --q1:#E58A73; --q1-soft:#3A2420; --q2:#7CC3A6; --q2-soft:#1F3229;
+  --q3:#E0B45A; --q3-soft:#362C17; --q4:#A3ACB6; --q4-soft:#262B30;
+  --energy:#E0B45A; --mood:#E08AAB; --good:#74C493; --warn:#E0B45A; --crit:#E58A73;
+  --blk-trab:#22303F; --blk-est:#2D2640; --blk-acad:#1F3328; --blk-desc:#1E3333; --blk-plan:#3A2E1F;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 56px;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700}
+h2{font-size:1.15rem;font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.status{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;max-width:560px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--warn);flex:none}
+.grid{display:grid;gap:20px}
+.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.kpi .v{font-family:var(--mono);font-size:1.9rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .d{font-size:.85rem;color:var(--muted)}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px;align-content:start;min-width:0}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.two{grid-template-columns:1.35fr 1fr}
+/* Eisenhower */
+.matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.quad{border-radius:10px;padding:12px;display:grid;gap:8px;align-content:start;min-height:150px}
+.quad h3{font-size:.95rem;display:flex;justify-content:space-between;gap:8px}
+.quad h3 small{font-family:var(--mono);font-weight:400;font-size:.75rem}
+.q1{background:var(--q1-soft)} .q1 h3{color:var(--q1)}
+.q2{background:var(--q2-soft)} .q2 h3{color:var(--q2)}
+.q3{background:var(--q3-soft)} .q3 h3{color:var(--q3)}
+.q4{background:var(--q4-soft)} .q4 h3{color:var(--q4)}
+.task{font-size:.86rem;line-height:1.35;display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:start}
+.task .chip{font-family:var(--mono);font-size:.68rem;padding:1px 6px;border-radius:999px;border:1px solid currentColor;color:var(--muted);white-space:nowrap}
+.task.done span.t{text-decoration:line-through;color:var(--muted)}
+.tomato{font-family:var(--mono);font-size:.72rem;color:var(--muted);white-space:nowrap}
+.area{width:8px;height:8px;border-radius:2px;margin-top:6px}
+.a-Trabalho{background:#4D7CB8}.a-Faculdade{background:#7E62B0}.a-Saúde{background:#3F9364}.a-Pessoal{background:#C49A2C}
+/* Week */
+.week-scroll{overflow-x:auto}
+.week{display:grid;grid-template-columns:52px repeat(7,minmax(92px,1fr));min-width:720px;position:relative}
+.week .dh{font-family:var(--mono);font-size:.75rem;text-align:center;padding-bottom:6px;color:var(--muted)}
+.week .dh.today{color:var(--accent);font-weight:600}
+.hours{position:relative}
+.hours span{position:absolute;right:8px;font-family:var(--mono);font-size:.68rem;color:var(--muted);transform:translateY(-50%)}
+.col{position:relative;border-left:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--h) - 1px),var(--line) calc(var(--h) - 1px),var(--line) var(--h))}
+.blk{position:absolute;left:3px;right:3px;border-radius:6px;padding:3px 6px;font-size:.7rem;line-height:1.2;overflow:hidden;color:var(--ink)}
+.blk b{display:block;font-family:var(--mono);font-weight:400;font-size:.64rem;color:var(--muted)}
+.t-Trabalho{background:var(--blk-trab)}.t-Estudo{background:var(--blk-est)}.t-Academia{background:var(--blk-acad)}.t-Descanso{background:var(--blk-desc)}.t-Planejamento{background:var(--blk-plan)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+/* Check-in chart */
+.chart svg{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-family:var(--mono);font-size:11px}
+.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cmp{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:2px}
+.cmp .k{font-size:.78rem;color:var(--muted)}
+.cmp .v{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1rem}
+.up{color:var(--good)} .down{color:var(--crit)}
+/* Pomodoro */
+.pomo{display:grid;gap:12px;justify-items:center;text-align:center}
+.clock{font-family:var(--mono);font-size:3.2rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.ring{width:180px;max-width:100%;aspect-ratio:1;position:relative;display:grid;place-items:center}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+select{max-width:100%;width:100%}
+button,select{font:inherit;font-size:.88rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mode{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* Prompts */
+.prompts{display:grid;gap:10px}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+summary{cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center;font-weight:700;font-size:.92rem}
+summary .eyebrow{font-weight:400}
+details pre{white-space:pre-wrap;font-family:var(--mono);font-size:.76rem;background:var(--bg);border-radius:8px;padding:10px;margin:10px 0 8px;max-height:260px;overflow:auto}
+.review{display:grid;gap:10px}
+.review dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.review dd{margin:0 0 6px}
+.note{font-size:.8rem;color:var(--muted)}
+footer{font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+footer a{color:var(--accent)}
+@media (max-width:900px){.two{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.matrix,.compare{grid-template-columns:1fr}.kpi .v{font-size:1.5rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Sistema Operacional Pessoal · Semana 40 · 28/09 a 04/10/2026</div>
+      <h1>Painel do Kennedy</h1>
+      <div class="muted">Tarefas, agenda, foco e bem-estar num lugar só. Dados da base no Airtable.</div>
+    </div>
+    <div class="status" id="status"><span class="dot" id="statusDot"></span><span id="statusText"></span></div>
+  </header>
+
+  <section class="grid kpis" id="kpis" aria-label="Indicadores da semana"></section>
+
+  <section class="grid two">
+    <div class="panel">
+      <div class="panel-head"><h2>Matriz de Eisenhower</h2><span class="eyebrow">urgente × importante</span></div>
+      <div class="matrix" id="matrix"></div>
+      <div class="legend"><span><i class="a-Trabalho"></i>Trabalho</span><span><i class="a-Faculdade"></i>Faculdade</span><span><i class="a-Saúde"></i>Saúde</span><span><i class="a-Pessoal"></i>Pessoal</span><span class="num">🍅 feitos/estimados</span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Pomodoro</h2><span class="eyebrow">25 · 5 · 15</span></div>
+      <div class="pomo">
+        <div class="mode" id="pMode">Foco</div>
+        <div class="ring">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="var(--line)" stroke-width="6"/><circle id="pArc" cx="50" cy="50" r="45" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-dasharray="282.74" stroke-dashoffset="0"/></svg>
+          <div class="clock" id="pClock">25:00</div>
+        </div>
+        <label class="note" for="pTask">Tarefa em foco</label>
+        <select id="pTask"></select>
+        <div class="btns">
+          <button class="primary" id="pStart">Iniciar</button>
+          <button id="pReset">Zerar</button>
+          <button id="pSkip">Pular etapa</button>
+        </div>
+        <div class="note">Pomodoros concluídos hoje neste navegador: <b class="num" id="pCount">0</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Planejamento semanal (time blocking)</h2><span class="eyebrow">espelhado no Google Agenda</span></div>
+    <div class="week-scroll"><div class="week" id="week"></div></div>
+    <div class="legend"><span><i class="t-Trabalho"></i>Trabalho</span><span><i class="t-Estudo"></i>Estudo</span><span><i class="t-Academia"></i>Academia</span><span><i class="t-Descanso"></i>Descanso</span><span><i class="t-Planejamento"></i>Planejamento</span></div>
+  </section>
+
+  <section class="grid two">
+    <div class="panel">
+      <div class="panel-head"><h2>Check-in diário</h2><span class="eyebrow">energia e humor, 1 a 5</span></div>
+      <div class="chart" id="chart"></div>
+      <div class="compare" id="compare"></div>
+      <div class="note">Os dias 28 e 29/09 são a linha de base: uma estimativa da rotina antes do sistema. O registro real começa em 30/09.</div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Revisão semanal</h2><span class="eyebrow">com apoio do Claude</span></div>
+      <dl class="review" id="review"></dl>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Prompts de IA</h2><span class="eyebrow">biblioteca do sistema</span></div>
+    <div class="prompts" id="prompts"></div>
+  </section>
+
+  <footer>
+    <span>Kennedy Pereira · Produtividade e Gestão do Tempo · UniFECAF · 2º semestre de 2026</span>
+    <span>Fonte: base “Sistema Operacional Pessoal (POS)” no Airtable, exportada em 30/09/2026</span>
+  </footer>
+</div>
+
+<script>
+const TODAY = "2026-09-30";
+const tasks = [
+  {t:"Entregar trabalho de Produtividade e Gestão do Tempo",a:"Faculdade",u:1,i:1,s:"Fazendo",p:"2026-09-30",pe:6,pf:5},
+  {t:"Gravar e publicar o vídeo pitch (até 4 min)",a:"Faculdade",u:1,i:1,s:"A fazer",p:"2026-09-30",pe:2,pf:0},
+  {t:"Demandas da sprint: priorizar automações da semana",a:"Trabalho",u:1,i:1,s:"Fazendo",p:"2026-10-02",pe:4,pf:2},
+  {t:"Importar a agenda do POS no Google Agenda",a:"Pessoal",u:1,i:1,s:"A fazer",p:"2026-10-01",pe:1,pf:0},
+  {t:"Trabalho da faculdade (15/10): entender o enunciado e montar o plano",a:"Faculdade",u:0,i:1,s:"A fazer",p:"2026-10-04",pe:2,pf:0},
+  {t:"Trabalho da faculdade (15/10): desenvolver a parte prática",a:"Faculdade",u:0,i:1,s:"A fazer",p:"2026-10-11",pe:6,pf:0},
+  {t:"Trabalho da faculdade (15/10): revisar, gravar e entregar",a:"Faculdade",u:0,i:1,s:"A fazer",p:"2026-10-14",pe:4,pf:0},
+  {t:"Assistir às aulas da semana no AVA",a:"Faculdade",u:0,i:1,s:"A fazer",p:"2026-10-03",pe:4,pf:0},
+  {t:"Resumir as aulas com o Claude (fichamento de 1 página)",a:"Faculdade",u:0,i:1,s:"A fazer",p:"2026-10-04",pe:1,pf:0},
+  {t:"Documentar um fluxo de automação entregue",a:"Trabalho",u:0,i:1,s:"A fazer",p:"2026-10-09",pe:2,pf:0},
+  {t:"Manter a academia 5x por semana",a:"Saúde",u:0,i:1,s:"Fazendo",p:"",pe:0,pf:0},
+  {t:"Buscar acompanhamento psicológico (plano, SUS ou faculdade)",a:"Saúde",u:0,i:1,s:"A fazer",p:"2026-10-09",pe:1,pf:0},
+  {t:"Dormir 7h: celular fora do quarto às 22:30",a:"Saúde",u:0,i:1,s:"Fazendo",p:"",pe:0,pf:0},
+  {t:"Montar o Sistema Operacional Pessoal no Airtable",a:"Pessoal",u:0,i:1,s:"Feito",p:"2026-09-30",pe:3,pf:3},
+  {t:"Responder mensagens e e-mails em lote (3 janelas por dia)",a:"Trabalho",u:1,i:0,s:"A fazer",p:"",pe:1,pf:0},
+  {t:"Reuniões sem pauta: pedir pauta ou resolver por mensagem",a:"Trabalho",u:1,i:0,s:"A fazer",p:"",pe:0,pf:0},
+  {t:"Rolar redes sociais antes de estudar",a:"Pessoal",u:0,i:0,s:"Delegada/Eliminada",p:"",pe:0,pf:0}
+];
+const blocks = [
+  {n:"Expediente presencial",ty:"Trabalho",d:[0,1,2,3,4],s:"09:00",e:"18:00"},
+  {n:"Academia",ty:"Academia",d:[0,1,2,3,4],s:"18:30",e:"19:30"},
+  {n:"Jantar sem tela",ty:"Descanso",d:[0,1,2,3,4],s:"19:45",e:"20:30"},
+  {n:"Estudo · 2 🍅",ty:"Estudo",d:[0,1,2,3],s:"20:30",e:"21:25"},
+  {n:"Estudo longo · 4 🍅",ty:"Estudo",d:[5],s:"09:30",e:"11:30"},
+  {n:"Revisão semanal + IA",ty:"Planejamento",d:[6],s:"19:00",e:"19:30"},
+  {n:"Telas off",ty:"Descanso",d:[0,1,2,3,4,5,6],s:"22:30",e:"23:00"}
+];
+const checkins = [
+  {d:"2026-09-28",en:2,hu:2,so:6,ac:1,po:0,pr:1,fase:"base"},
+  {d:"2026-09-29",en:2,hu:2,so:6,ac:1,po:1,pr:1,fase:"base"},
+  {d:"2026-09-30",en:3,hu:3,so:6,ac:0,po:5,pr:0,fase:"sistema"}
+];
+const review = {
+  "Top 3 da semana":"1. Entregar Produtividade e Gestão do Tempo (30/09)<br>2. Assistir às aulas pendentes no AVA<br>3. Entender o enunciado do trabalho com prazo em 15/10",
+  "Obstáculos":"Cansaço depois do trabalho e da academia, estudo sem horário, celular interrompendo o foco e ansiedade com prazos acumulados.",
+  "Ajustes":"Estudo com horário fixo às 20:30, meta mínima de 2 Pomodoros, celular fora do quarto às 22:30 e check-in diário de 1 minuto.",
+  "Resumo da IA":"Semana de transição. O gargalo não é falta de tempo, e sim chegar cansado ao bloco de estudo sem um primeiro passo claro. Manter o estudo curto (2 Pomodoros), sempre começando pelo “próximo passo de 2 minutos” da tarefa, e proteger o sono, que é o que mais pesa na energia e no humor."
+};
+const prompts = [
+  {n:"Planejamento semanal",w:"Domingo (planejamento)",x:"Você é meu assistente de planejamento. Minha rotina fixa: trabalho presencial 09h-18h (seg-sex), academia 18h30-19h30, estudo 20h30-21h25 (seg-qui, 2 Pomodoros) e sábado 09h30-11h30 (4 Pomodoros). Abaixo estão minhas tarefas com prazo e estimativa em Pomodoros. 1) Classifique cada uma na Matriz de Eisenhower. 2) Distribua as tarefas dos quadrantes 1 e 2 nos blocos da semana sem passar da capacidade. 3) Liste o que deve ser eliminado ou adiado. 4) Escolha um Top 3 da semana. Responda em tabela.\n\nTAREFAS:\n[colar a exportação da view 'Caixa de entrada' do Airtable]"},
+  {n:"Classificar tarefa na Matriz de Eisenhower",w:"Diário (manhã)",x:"Classifique a tarefa abaixo na Matriz de Eisenhower (urgente? importante?) considerando que meus objetivos são: entregar bem no trabalho, concluir a faculdade e cuidar da minha saúde. Responda só com: Urgente (sim/não), Importante (sim/não), Quadrante e uma frase de justificativa.\n\nTAREFA: [descrever]"},
+  {n:"Destravar: próximo passo de 2 minutos",w:"Ao travar numa tarefa",x:"Estou procrastinando a tarefa abaixo e estou cansado. Quebre em no máximo 5 passos, cada um cabendo em 1 Pomodoro (25 min). O primeiro passo precisa ser tão pequeno que eu consiga fazer em 2 minutos agora. Seja direto e sem julgamentos.\n\nTAREFA: [descrever]"},
+  {n:"Mensagem profissional clara",w:"Comunicação",x:"Reescreva a mensagem abaixo para o contexto profissional: tom cordial e direto, contexto em 1 frase, pedido claro, prazo e próximo passo. Máximo de 6 linhas. Me dê uma versão para WhatsApp e outra para e-mail.\n\nMENSAGEM: [colar rascunho]"},
+  {n:"Fichamento de aula",w:"Depois da aula",x:"Com base nas anotações/transcrição abaixo, faça um fichamento de 1 página: 5 ideias principais, 3 conceitos com definição curta, 1 exemplo prático ligado a IA e automação e 3 perguntas de revisão.\n\nANOTAÇÕES: [colar]"},
+  {n:"Revisão semanal",w:"Domingo (revisão)",x:"Abaixo estão meus check-ins diários (energia, humor, sono, academia, Pomodoros, procrastinação) e as tarefas concluídas e pendentes da semana. 1) Resuma a semana em 3 frases. 2) Aponte 1 padrão que liga energia/sono ao foco. 3) Sugira no máximo 2 ajustes para a próxima semana. 4) Se a carga estiver alta, diga o que cortar. Seja gentil e prático.\n\nCHECK-INS: [colar]\nTAREFAS: [colar]"}
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = d => d ? d.slice(8,10)+"/"+d.slice(5,7) : "";
+const quad = t => t.u&&t.i?1:t.i?2:t.u?3:4;
+
+// KPIs
+const active = tasks.filter(t=>t.s!=="Delegada/Eliminada");
+const done = active.filter(t=>t.s==="Feito").length;
+const pe = active.reduce((a,t)=>a+t.pe,0), pf = active.reduce((a,t)=>a+t.pf,0);
+const q2 = active.filter(t=>quad(t)===2).length;
+const overdue = active.filter(t=>t.p && t.p<TODAY && t.s!=="Feito").length;
+const dueToday = active.filter(t=>t.p===TODAY && t.s!=="Feito");
+const kpis = [
+  {k:"Tarefas ativas",v:active.length,d:`${done} concluída · ${active.filter(t=>t.s==="Fazendo").length} em andamento`,b:done/active.length},
+  {k:"Pomodoros",v:`${pf}<span class="muted" style="font-size:1rem">/${pe}</span>`,d:"feitos / estimados no backlog",b:pf/pe},
+  {k:"No quadrante 2",v:q2,d:"importante e não urgente: onde o sistema quer que o tempo vá",b:q2/active.length},
+  {k:"Prazos de hoje",v:dueToday.length,d:overdue?`${overdue} atrasada(s)`:"nenhuma atrasada",b:null}
+];
+$("#kpis").innerHTML = kpis.map(x=>`<div class="kpi"><div class="eyebrow">${x.k}</div><div class="v">${x.v}</div><div class="d">${x.d}</div>${x.b!==null?`<div class="bar"><i style="width:${Math.round(x.b*100)}%"></i></div>`:""}</div>`).join("");
+const st = dueToday.length ? "warn" : "good";
+$("#statusDot").style.background = `var(--${st})`;
+$("#statusText").innerHTML = dueToday.length
+  ? `<b>Hoje:</b> ${dueToday.map(t=>esc(t.t)).join(" e ")}.`
+  : "<b>Hoje:</b> nenhuma entrega pendente.";
+
+// Matrix
+const qInfo = {1:["Fazer agora","q1"],2:["Agendar","q2"],3:["Delegar / limitar","q3"],4:["Eliminar","q4"]};
+$("#matrix").innerHTML = [1,2,3,4].map(q=>{
+  const list = tasks.filter(t=>quad(t)===q).sort((a,b)=>(a.p||"9")<(b.p||"9")?-1:1);
+  return `<div class="quad ${qInfo[q][1]}"><h3>${q}. ${qInfo[q][0]}<small>${list.length}</small></h3>${list.map(t=>
+    `<div class="task ${t.s==="Feito"||t.s==="Delegada/Eliminada"?"done":""}"><i class="area a-${t.a}" title="${t.a}"></i><span class="t">${esc(t.t)}${t.p?` <span class="chip">${fmt(t.p)}</span>`:""}</span>${t.pe?`<span class="tomato">🍅 ${t.pf}/${t.pe}</span>`:"<span></span>"}</div>`).join("")}</div>`;
+}).join("");
+
+// Week
+const days = ["Seg 28","Ter 29","Qua 30","Qui 01","Sex 02","Sáb 03","Dom 04"];
+const H0 = 8, H1 = 23.5, PX = 32; // px por hora
+const toH = s => +s.slice(0,2) + +s.slice(3)/60;
+let w = `<div></div>` + days.map((d,i)=>`<div class="dh ${i===2?"today":""}">${d}${i===2?" · hoje":""}</div>`).join("");
+let hrs = ""; for(let h=H0;h<=23;h+=2) hrs += `<span style="top:${(h-H0)*PX}px">${String(h).padStart(2,"0")}h</span>`;
+w += `<div class="hours" style="height:${(H1-H0)*PX}px">${hrs}</div>`;
+for(let i=0;i<7;i++){
+  const bl = blocks.filter(b=>b.d.includes(i)).map(b=>{
+    const top=(toH(b.s)-H0)*PX, h=(toH(b.e)-toH(b.s))*PX-2;
+    return `<div class="blk t-${b.ty}" style="top:${top}px;height:${h}px" title="${b.n} ${b.s}–${b.e}">${b.n}${h>26?`<b>${b.s}–${b.e}</b>`:""}</div>`;
+  }).join("");
+  w += `<div class="col" style="height:${(H1-H0)*PX}px;--h:${PX*2}px">${bl}</div>`;
+}
+$("#week").innerHTML = w;
+
+// Chart
+(function(){
+  const W=420,H=190,L=28,R=10,T=14,B=30, n=checkins.length;
+  const x=i=>L+(i+.5)*((W-L-R)/n), y=v=>T+(5-v)*((H-T-B)/5), bw=Math.min(26,(W-L-R)/n/3.2);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Energia e humor por dia">`;
+  for(let v=1;v<=5;v++) s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+  const bx = x(1.5);
+  s+=`<line x1="${bx}" x2="${bx}" y1="${T}" y2="${H-B+4}" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="${bx+4}" y="${T+8}">sistema →</text>`;
+  checkins.forEach((c,i)=>{
+    s+=`<rect x="${x(i)-bw-2}" y="${y(c.en)}" width="${bw}" height="${y(0)-y(c.en)}" rx="3" fill="var(--energy)" opacity="${c.fase==="base"?.55:1}"/>`;
+    s+=`<rect x="${x(i)+2}" y="${y(c.hu)}" width="${bw}" height="${y(0)-y(c.hu)}" rx="3" fill="var(--mood)" opacity="${c.fase==="base"?.55:1}"/>`;
+    s+=`<text x="${x(i)}" y="${H-12}" text-anchor="middle">${fmt(c.d)}${c.fase==="base"?"*":""}</text>`;
+  });
+  s+=`</svg>`;
+  $("#chart").innerHTML = s + `<div class="legend"><span><i style="background:var(--energy)"></i>Energia</span><span><i style="background:var(--mood)"></i>Humor</span><span>* linha de base estimada</span></div>`;
+  const avg=(f,arr)=>arr.reduce((a,c)=>a+c[f],0)/arr.length;
+  const b=checkins.filter(c=>c.fase==="base"), sy=checkins.filter(c=>c.fase!=="base");
+  const items=[["Pomodoros/dia","po",0],["Energia (1-5)","en",1],["Dias sem procrastinar","pr",2]];
+  $("#compare").innerHTML = items.map(([k,f,m])=>{
+    let a=avg(f,b), z=avg(f,sy);
+    if(m===2){a=b.filter(c=>!c.pr).length/b.length*100; z=sy.filter(c=>!c.pr).length/sy.length*100;}
+    const fx=v=>m===2?Math.round(v)+"%":v.toFixed(1).replace(".",",");
+    return `<div class="cmp"><span class="k">${k}</span><span class="v">${fx(a)} → <b class="${z>=a?"up":"down"}">${fx(z)}</b></span></div>`;
+  }).join("");
+})();
+
+// Review
+$("#review").innerHTML = Object.entries(review).map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+
+// Prompts
+$("#prompts").innerHTML = prompts.map((p,i)=>`<details><summary>${esc(p.n)} <span class="eyebrow">${esc(p.w)}</span></summary><pre id="pr${i}">${esc(p.x)}</pre><button data-copy="${i}">Copiar prompt</button></details>`).join("");
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-copy]"); if(!b) return;
+  const el=document.getElementById("pr"+b.dataset.copy);
+  const ok=()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar prompt",1500)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Texto selecionado: use Ctrl+C"};
+  try{navigator.clipboard.writeText(el.textContent).then(ok,sel)}catch(_){sel()}
+});
+
+// Pomodoro
+(function(){
+  const M={foco:25*60,pausa:5*60,longa:15*60}, label={foco:"Foco",pausa:"Pausa curta",longa:"Pausa longa"};
+  let mode="foco", left=M.foco, timer=null, cycle=0;
+  const key="pos-pomo-"+new Date().toISOString().slice(0,10);
+  let count=0; try{count=+localStorage.getItem(key)||0}catch(_){}
+  const sel=$("#pTask");
+  sel.innerHTML = tasks.filter(t=>t.pe>0&&t.s!=="Feito").map(t=>`<option>${esc(t.t)}</option>`).join("");
+  const draw=()=>{
+    $("#pClock").textContent=String(Math.floor(left/60)).padStart(2,"0")+":"+String(left%60).padStart(2,"0");
+    $("#pArc").setAttribute("stroke-dashoffset",(282.74*(1-left/M[mode])).toFixed(1));
+    $("#pArc").setAttribute("stroke",mode==="foco"?"var(--accent)":"var(--energy)");
+    $("#pMode").textContent=label[mode]; $("#pCount").textContent=count;
+    document.title = timer ? `${$("#pClock").textContent} · Painel POS do Kennedy` : "Painel POS do Kennedy";
+  };
+  const next=()=>{
+    if(mode==="foco"){count++;cycle++;try{localStorage.setItem(key,count)}catch(_){} mode=cycle%4===0?"longa":"pausa";}
+    else mode="foco";
+    left=M[mode]; draw();
+  };
+  const stop=()=>{clearInterval(timer);timer=null;$("#pStart").textContent="Iniciar"};
+  $("#pStart").onclick=()=>{
+    if(timer){stop();draw();return}
+    $("#pStart").textContent="Pausar";
+    timer=setInterval(()=>{left--; if(left<=0){stop();next();} draw();},1000);
+  };
+  $("#pReset").onclick=()=>{stop();left=M[mode];draw()};
+  $("#pSkip").onclick=()=>{stop();next()};
+  draw();
+})();
+</script>
