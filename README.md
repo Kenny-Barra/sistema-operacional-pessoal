@@ -42,7 +42,7 @@ Sistema de produtividade pessoal que junta **Airtable**, **Google Agenda** e **I
 
 ## 2. Links do projeto
 
-- **Vídeo Pitch:** _[colar o link do YouTube/Loom/Drive]_
+- **Vídeo Pitch (YouTube):** https://youtu.be/X9Nvlp9Ii6c
 - **Dashboard (Painel POS):** https://claude.ai/artifact/JZHFT2irWLy7iPYgsBy9dC
 - **Base no Airtable (somente leitura):** https://airtable.com/appcEBvt6c792Oi5F/shrqILXXOTvyHHImJ
 - **Parte teórica:** [docs/parte-teorica.md](docs/parte-teorica.md)
@@ -231,7 +231,7 @@ O sistema entrou em uso em **30/09/2026**. Os dias 28 e 29/09 são uma **linha d
 |---|---|---|
 | Parte Teórica: Análise e Discussão | 1,5 | [docs/parte-teorica.md](docs/parte-teorica.md) (+ `.docx`/`.pdf` na pasta de entregáveis) |
 | Parte Prática: Sistema Operacional Pessoal | 3,5 | Base no Airtable, painel, agenda `.ics`, prompts e este README |
-| Vídeo Pitch (até 4 min) | 2,0 | Link na seção 2 |
+| Vídeo Pitch (até 4 min) | 2,0 | https://youtu.be/X9Nvlp9Ii6c |
 
 ---
 
