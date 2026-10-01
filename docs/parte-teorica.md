@@ -4,6 +4,13 @@
 **Disciplina:** Produtividade e Gestão do Tempo – UniFECAF, 2º semestre
 **Aluno:** Kennedy Pereira
 
+**Links do projeto:**
+
+- Vídeo pitch: https://youtu.be/X9Nvlp9Ii6c
+- Repositório (GitHub): https://github.com/Kenny-Barra/sistema-operacional-pessoal
+- Painel (dashboard): https://claude.ai/artifact/JZHFT2irWLy7iPYgsBy9dC
+- Base no Airtable: https://airtable.com/appcEBvt6c792Oi5F/shrqILXXOTvyHHImJ
+
 ---
 
 ## 1. Diagnóstico da rotina atual
